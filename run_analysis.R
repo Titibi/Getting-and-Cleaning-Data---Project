@@ -9,16 +9,6 @@ newwd <- paste(wd, "/UCI HAR Dataset/" , sep = "")
 setwd(newwd)
 print(paste("New Working Directory: ",newwd)) 
 
-#Checking for reshape2 package
-inst_pckg <- as.data.frame(installed.packages())
-pck_name <- as.character(inst_pckg$Package)
-reshape2 <- grep('reshape2',pck_name)
-if(pck_name[dplyr] == "dplyr"){
-    print("reshape2 is installed")
-  } else {
-    print("Pleae install reshape2 package. The program will exit now")
-    }
-
 #Loading reshape2
 library(reshape2)
 
