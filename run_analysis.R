@@ -36,18 +36,15 @@ subject_train <- read.table("./train/subject_train.txt", col.names = "Subject", 
 x_train <- read.table("./train/x_train.txt", stringsAsFactors = FALSE,col.names = features_names)[req_features_indx]
 y_train <- read.table("./train/y_train.txt", col.names = "Activity_label", stringsAsFactors = FALSE)
 training_set <- cbind(subject_train,y_train,x_train)
-#training_set <- tbl_df(training_set)
 
 #Loading Test data into R
 subject_test <- read.table("./test/subject_test.txt", col.names = "Subject", stringsAsFactors = FALSE)
 x_test <- read.table("./test/x_test.txt", stringsAsFactors = FALSE,col.names = features_names)[req_features_indx]
 y_test <- read.table("./test/y_test.txt", col.names = "Activity_label", stringsAsFactors = FALSE)
 test_set <- cbind(subject_test,y_test,x_test)
-#test_set <- tbl_df(test_set)
 
 # Row merge both the sets
 data <- rbind(training_set,test_set)
-#data <- tbl_df(data)
 
 #Turning activity_label column to factor and putting acitvity name
 data$Activity_label <- factor(data$Activity_label, levels = activity$V1, labels = activity$V2)
