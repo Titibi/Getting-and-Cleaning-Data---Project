@@ -1,0 +1,23 @@
+Variables
+
+zip: HTTPS path to the zip file that is downloaded
+wd: current working directory
+newwd: new working directory
+inst_pckg: holds output of installed.packages()
+pck_name: name of the packages from inst_pckg variable
+reshape2: variable to grep "reshape2" package name from pck_name
+activity: List of activities performed by subjects
+all_features: List of all features that were calculated
+req_features_indx: index of mean and standard deviation features that will be exptracted
+features_names: name of features
+subject_train: subjects in traning set
+x_train: traning set readings
+y_train: traning set activity
+training_set: column combine of subject_train, y_train and x_train
+subject_test: subjects in test set
+x_test: test set readings
+y_test: test set activity
+test_set: column combine of subject_test, y_test and x_test
+data: row combine of traning_set and test_set
+data_melt: vector after apllying melt operation on Subject and Activity_labels column of vector "data"
+data_mean: vector after applying dcast operation on "data_melt"
